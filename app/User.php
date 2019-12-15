@@ -43,4 +43,23 @@ class User extends Authenticatable
 
         //return $this->belongsToMany('App/Action', 'user_actions','user_id', 'role_id');
     }
+
+
+
+    public function getNameAttribute($value) {
+
+        // return ucfirst($value);
+        return strtoupper($value);
+
+    }
+
+
+    public function setNameAttribute($value) {
+
+
+        $this->attributes['name'] = strtoupper($value); 
+
+    }
+
+
 }
